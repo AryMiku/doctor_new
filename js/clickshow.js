@@ -1,34 +1,32 @@
-var a = 1,b=1,c=1,d=1;
-
 function clickemail() {
-    if(a == 1){
+    if(document.getElementById("comback1").checked){
         document.getElementById("email").innerHTML = "<input type='email' class='input' name='inputmail' placeholder='กรุณากรอก Email' required>";
-        a = 0
+        document.insert_form.comback1.value = 'email';
         }
     else {
       document.getElementById("email").innerHTML = "<input type='hidden'>";
-      a = 1
+      document.insert_form.comback1.value = '';
     }
   }
 
   function clickline() {
-    if(b == 1){
+    if(document.getElementById("comback2").checked){
         document.getElementById("line").innerHTML = "<input type='text' class='input' name='inputline' placeholder='กรุณากรอก LINE ID' required>";
-        b = 0
+        document.insert_form.comback1.value = 'line';
         }
     else {
       document.getElementById("line").innerHTML = "<input type='hidden'>";
-      b = 1
+      document.insert_form.comback1.value = '';
     }
   }
 
   function clickpost() {
-    if(c == 1){
+    if(document.getElementById("comback3").checked){
         document.getElementById("post").innerHTML = "<input type='text' class='input' name='inputadd' placeholder='กรุณากรอกที่อยู่ของคุณ' required>";
-        c = 0
+        document.insert_form.comback1.value = 'post';
         }
     else {
       document.getElementById("post").innerHTML = "<input type='hidden'>";
-      c = 1
+      document.insert_form.comback1.value = '';
     }
   }

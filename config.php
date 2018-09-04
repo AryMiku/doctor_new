@@ -4,4 +4,5 @@
     {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
+    mysqli_query($con,"SET NAMES UTF8");
 ?>

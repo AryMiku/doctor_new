@@ -7,6 +7,7 @@
     <title>หน้าหลัก</title>
     <script src="js/clickshow.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/insert.js"></script>
     <script src="js/all.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/sweetalert2.all.js"></script>
@@ -16,19 +17,9 @@
     <link rel="stylesheet" href="css/bulma.min.css">
     <link rel="stylesheet" href="css/sweetalert2.css">
     <link rel="stylesheet" href="css/sweetalert2.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css"> -->
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.0/sweetalert2.all.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.0/sweetalert2.all.min.js"></script> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.0/sweetalert2.css" /> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.0/sweetalert2.js"></script> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.0/sweetalert2.min.css" /> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.0/sweetalert2.min.js"></script> -->
 </head>
 <body>
-
-    <div class="container">
+  <div class="container">
         <div style="margin: 6%">
             <div class="columns">
                 <div class="column">
@@ -60,7 +51,7 @@
             <div class="field">
               <div class="control">
                 Username : 
-                <input class="input is-large" type="text" placeholder="Username" name="username" autofocus="">
+                <input class="input is-large" type="text" placeholder="Username" name="username">
               </div>
             </div>
 
@@ -79,7 +70,7 @@
           </div>
         </div>
 
-        <div class="modal" id="myModal">
+        <div class="modal" id="myModal" name="myModal">
             <div class="modal-background"></div>
             <div class="modal-card"  style="width:1000px">
                 <header class="modal-card-head">
@@ -87,10 +78,10 @@
                 <button class="delete" aria-label="close" data-bulma-modal="close"></button>
                 </header>
                 <section class="modal-card-body">
-                <form action="insertuser_2.php" method="POST">
+                <form method="POST" name="insert_form">
         <div class="field">
           <label class="label">ชื่อ - นามสกุล ภาษาไทย</label>
-          <input class="input" type="text" placeholder="ex. นายใจดี สุดโลก" name="namethai">
+          <input class="input" type="text" placeholder="ex. นายใจดี สุดโลก" name="namethai" id="nameeiei">
         </div>
 
         <div class="field">
@@ -129,10 +120,10 @@
           <label class="label">ประวัติการเคยได้รับเลือด</label>
           <div class="control">
             <label class="radio">
-              <input type="radio" name="blood" value="have"> เคย
+              <input type="radio" name="blood" id="blood" value="have"> เคย
             </label>
             <label class="radio">
-              <input type="radio" name="blood" value="nothave"> ไม่เคย
+              <input type="radio" name="blood" id="blood2" value="nothave"> ไม่เคย
             </label>
             <input class="input" type="text" name="bloodhave" placeholder="ระบุ">
           </div>
@@ -142,10 +133,10 @@
           <label class="label">ประวัติการบริจาคเลือด</label>
           <div class="control">
             <label class="radio">
-              <input type="radio" name="goblood" value="have"> เคย
+              <input type="radio" name="goblood" id="goblood" value="have"> เคย
             </label>
             <label class="radio">
-              <input type="radio" name="goblood" value="nohave"> ไม่เคย
+              <input type="radio" name="goblood" id="goblood2" value="nohave"> ไม่เคย
             </label>
             <input class="input" type="text" name="gobloodhave" placeholder="ระบุ">
           </div>
@@ -155,10 +146,10 @@
           <label class="label">ทานมังสวิรัติ</label>
           <div class="control">
             <label class="radio">
-              <input type="radio" name="masa" value="eat"> ทาน
+              <input type="radio" name="masa" id="masa" value="eat"> ทาน
             </label>
             <label class="radio">
-              <input type="radio" name="masa" value="noteat"> ไม่ทาน
+              <input type="radio" name="masa" id="masa2" value="noteat"> ไม่ทาน
             </label>
             <input class="input" type="text" name="masahave" placeholder="ระบุ">
           </div>
@@ -168,13 +159,13 @@
           <label class="label">คนในครอบครัวเป็นธาลัสซีเมีย</label>
           <div class="control">
             <label class="radio">
-              <input type="radio" name="fatarus" value="notknow"> ไม่ทราบ
+              <input type="radio" name="fatarus" id="fatarus" value="notknow"> ไม่ทราบ
             </label>
             <label class="radio">
-              <input type="radio" name="fatarus" value="no"> ไม่ใช่
+              <input type="radio" name="fatarus" id="fatarus2" value="no"> ไม่ใช่
             </label>
             <label class="radio">
-              <input type="radio" name="fatarus" value="other"> อื่นๆ
+              <input type="radio" name="fatarus" id="fatarus3" value="other"> อื่นๆ
             </label>
             <input class="input" type="text" name="fatarushave" placeholder="ระบุ">
           </div>
@@ -184,16 +175,16 @@
           <label class="label" ่>ช่องทางการตอบกลับ</label>
           <div class="control">
             <label class="checkbox">
-              <input type="checkbox" name="comback1" value="email" onclick="clickemail()"> E-mail &nbsp;&nbsp;
+              <input type="checkbox" name="comback1" id="comback1" value="email" onclick="a = clickemail()"> E-mail &nbsp;&nbsp;
             </label>
             <label class="checkbox">
-              <input type="checkbox" name="comback2" value="line" onclick="clickline()"> LINE &nbsp;&nbsp;
+              <input type="checkbox" name="comback2" id="comback2" value="line" onclick="b = clickline()"> LINE &nbsp;&nbsp;
             </label>
             <label class="checkbox">
-              <input type="checkbox" name="comback3" value="thaipost" onclick="clickpost()"> ไปรณีย์ &nbsp;&nbsp;
+              <input type="checkbox" name="comback3" id="comback3" value="thaipost" onclick="c = clickpost()"> ไปรณีย์ &nbsp;&nbsp;
             </label>
             <label class="checkbox">
-              <input type="checkbox" name="comback4" value="day"> รอรับผลวันนี้ &nbsp;&nbsp;
+              <input type="checkbox" name="comback4" id="comback4" value="day"> รอรับผลวันนี้ &nbsp;&nbsp;
             </label>
           </div>
         </div>
@@ -207,8 +198,8 @@
         </form>
                 </section>
                 <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
-                <button class="button" data-bulma-modal="close">Cancel</button>
+                <button class="button is-success" onclick="insert()">บันทึกข้อมูล</button>
+                <button class="button" data-bulma-modal="close" id="closeei">ยกเลิก</button>
                 </footer>
             </div>
         </div>
@@ -218,7 +209,7 @@
             - กดที่ปุ่ม Register > กรอกข้อมูลให้ครบถ้วน > กดที่ปุ่ม Submit
         </div>
       </div>
-</div>
+  </div>
 
       <script>
         class BulmaModal {
@@ -299,7 +290,6 @@
             console.log("closed")
         })
         
-    
     </script>
 </body>
 </html>

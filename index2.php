@@ -51,7 +51,7 @@ session_start();
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
-                  <a class="button is-primary" href="index.html">
+                  <a class="button is-primary" href="index.php">
                     <span class="icon">
                       <i class="fas fa-sign-out-alt"></i>
                     </span>
@@ -73,20 +73,6 @@ session_start();
                         <a href="checkday.php" class="button is-info is-outlined" style="width: 500px;height: 500px; font-size: 50px;">เช็คยอดลงทะเบียน</a>
                 </div>
             </div>
-            <!-- <div class="columns">
-                    <div class="column has-text-centered">
-                        <h1 style="font-size: 25px; margin-left: -50px">สำหรับลงทะเบียนผู้ป่วย</h1>
-                    </div>
-                    <div class="column has-text-centered">
-                        <h1 style="font-size: 25px; margin-left: -50px; color: red;">!! เฉพาะเจ้าหน้าที่ </h1>
-                    </div>
-                </div>
-        </div>
-
-        <div class="notification">
-            <b>วิธีการลงทะเบียน</b> <br>
-            - กดที่ปุ่ม Register > กรอกข้อมูลให้ครบถ้วน > กดที่ปุ่ม Submit
-        </div> -->
       </div>
 </body>
 </html>
