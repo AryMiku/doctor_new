@@ -8,6 +8,7 @@
     <script src="js/clickshow.js"></script>
     <script src="js/login.js"></script>
     <script src="js/insert.js"></script>
+    <script src="js/adduser.js"></script>
     <script src="js/all.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/sweetalert2.all.js"></script>

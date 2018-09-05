@@ -13,14 +13,25 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="js/clickshow.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/insert.js"></script>
+    <script src="js/adduser.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/sweetalert2.all.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/sweetalert2.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/sweetalert2.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 </head>
 <body>
     <nav class="navbar ">
         <div class="navbar-brand">
           <a class="navbar-item">
-            <img src="images.png" width="112" height="28">
+            <img src="img/images.png" width="112" height="28">
           </a>
         </div>
     
@@ -40,7 +51,7 @@ session_start();
                 <a class="navbar-item " href="checkday.php">
                   เช็คดูยอดของการลงทะเบียน
                 </a>
-                <?php if($_SESSION["super"] == "1"){ ?> <a class="navbar-item " href="newuser.php">
+                <?php if($_SESSION["super"] == "1"){ ?> <a class="navbar-item " onclick="testadduser()">
                   เพิ่ม User ในระบบ
                 </a> <?php } ?> 
               </div>
@@ -67,7 +78,7 @@ session_start();
         <div style="margin: 6%">
             <div class="columns">
                 <div class="column">
-                        <a href="checkpeople.html" class="button is-primary is-outlined" style="width: 500px;height: 500px; font-size: 50px;">เช็คข้อมูลผู้ป่วย</a>
+                        <a href="checkpeople.php" class="button is-primary is-outlined" style="width: 500px;height: 500px; font-size: 50px;">เช็คข้อมูลผู้ป่วย</a>
                 </div>
                 <div class="column">
                         <a href="checkday.php" class="button is-info is-outlined" style="width: 500px;height: 500px; font-size: 50px;">เช็คยอดลงทะเบียน</a>
