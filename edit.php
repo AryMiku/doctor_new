@@ -12,9 +12,20 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script src="js/clickshow.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/insert.js"></script>
+    <script src="js/adduser.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/updateuser.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/sweetalert2.all.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/sweetalert2.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/sweetalert2.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -45,37 +56,15 @@ session_start();
     </div>
 
             <div id="navMenubd-example" class="navbar-menu">
-        <div class="navbar-start">
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link  is-active" href="#">
-                Menu
-              </a>
-              <div class="navbar-dropdown ">
-                <a class="navbar-item " href="index2.html">
-                    หน้าหลัก
-                </a>
-                <a class="navbar-item " href="checkpeople.php">
-                  เช็คผลตรวจ
-                </a>
-                <a class="navbar-item " href="checkday.php">
-                  เช็คดูยอดของการลงทะเบียน
-                </a>
-                <?php if($_SESSION["super"] == "1"){ ?> <a class="navbar-item " href="newuser.php">
-                  เพิ่ม User ในระบบ
-                </a><?php } ?>
-              </div>
-            </div>
-          </div>
-    
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
-                  <a class="button is-primary" href="login.html">
+                  <a class="button is-primary" onclick="gohome();">
                     <span class="icon">
-                      <i class="fas fa-sign-out-alt"></i>
+                      <i class="fas fa-home"></i>
                     </span>
-                    <span>ออกจากระบบ</span>
+                    <span>กลับสู่หน้าหลัก</span>
                   </a>
                 </p>
               </div>
@@ -94,7 +83,7 @@ session_start();
 
       </div>
       <div class="column" style="background-color:#f7f8f9">
-        <form action="updateuser.php" method="POST">
+        <form action="" method="POST" name="update_form">
         <div class="field">
           <label class="label">ชื่อ - นามสกุล ภาษาไทย</label>
           <input class="input" type="text" placeholder="ex. นายใจดี สุดโลก" name="namethai" value="<?php echo $objResult["namethai"]; ?>">
@@ -215,21 +204,19 @@ session_start();
         
         <div class="field">
           <label class="label" style="color : red;">ผู้ตรวจสอบข้อมูล</label>
-          <input class="input" type="text" placeholder="กรุณากรอกข้อมูล" name="usercheck" value='<?php echo $objResult[usercheck]; ?>' required>
+          <input class="input" type="text" placeholder="กรุณากรอกข้อมูล" name="usercheck" value='<?php echo $objResult[usercheck]; ?>'>
           <input type="hidden" value="true" name="checkcheck">
         </div>
-
         <br>
-        <div class="field is-grouped">
+      </form>
+      <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link">Submit</button>
+            <button class="button is-success" onclick="update()">ตกลง</button>
           </div>
           <div class="control">
-            <button class="button is-text">Cancel</button>
+            <button class="button is-text" onclick="update()">Cancel</button>
           </div>
         </div>
-
-      </form>
       </div>
       <div class="column" style="background-color:#f7f8f9">
       </div>
@@ -238,6 +225,7 @@ session_start();
 
 
   <script src='https://use.fontawesome.com/releases/v5.0.0/js/all.js'></script>
+
 
   <?php
     mysqli_close($con);

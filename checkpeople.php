@@ -11,6 +11,7 @@ session_start();
     <script src="js/insert.js"></script>
     <script src="js/adduser.js"></script>
     <script src="js/all.js"></script>
+    <script src="js/updateuser.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/sweetalert2.all.js"></script>
     <script src="js/sweetalert2.all.min.js"></script>
