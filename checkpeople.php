@@ -69,11 +69,16 @@ session_start();
       </nav>
   <div class="container">
    <br />
-   <h2 align="center">Ajax Live Data Search using Jquery PHP MySql</h2><br />
+   <div class="column">
+    <h2 align="center">ค้นหาข้อมูล</h2>
+   </div>
    <div class="form-group">
-    <div class="input-group">
-     <span class="input-group-addon">Search</span>
-     <input type="text" name="search_text" id="search_text" placeholder="Search by Customer Details" class="form-control" />
+    <div class="column">
+        <div class="field has-addons has-text-centered" style="margin-left:100px;">
+            <div class="control">
+                <input class="input" type="text" placeholder="ค้นหา" name="id" style="width:1000px" name="search_text" id="search_text">
+            </div>
+        </div>
     </div>
    </div>
    <br />
@@ -169,5 +174,12 @@ session_start();
             }
             });
         }
+
+    function testupdate(id){
+        //swal(id.toString());
+        window.open("edit.php?id="+ id+ "", "_blank","width=1700,height=750");
+    }
+
+
 
 </script>

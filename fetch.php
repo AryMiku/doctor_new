@@ -24,35 +24,35 @@ if(mysqli_num_rows($result) > 0)
 {
  $output .= '
   <div class="table-responsive">
-   <table class="table table bordered">
+   <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
     <tr>
-     <th>HN</th>
-     <th>เลขบัตรประชาชน</th>
-     <th>ชื่อ - นามสกุล</th>
-     <th>อายุ</th>
-     <th>เพศ</th>
-     <th>ตรวจข้อมูล</th>
-     <th>ลบข้อมูล</th>
-     <th>สถานะ</th>
+     <th width="100"><div align="center">HN</div></th>
+     <th width="300"><div align="center">เลขบัตรประชาชน</div></th>
+     <th width="350"><div align="center">ชื่อ - นามสกุล</div></th>
+     <th width="100"><div align="center">อายุ</div></th>
+     <th width="10"><div align="center">เพศ</div></th>
+     <th width="150"><div align="center">ตรวจข้อมูล</div></th>
+     <th width="10"><div align="center">ลบข้อมูล</div></th>
+     <th width="10"><div align="center">สถานะ</div></th>
     </tr>
  ';
  while($row = mysqli_fetch_array($result))
  {
-    if($row["HN"] == "1"){
-        $a = "<div style='background-color:green'>dfdfd</div>";
+    if($row["checkcheck"] == 'true'){
+        $a = "<div align='center' style='background-color:#51ff65'>ตรวจสอบแล้ว</div>";
     }
     else{
-        $a = "<div style='background-color:red'>dfdfd</div>";
+        $a = "<div align='center' style='background-color:red'>ยังไม่ตรวจสอบ</div>";
     }
   $output .= '
    <tr>
-    <td>'.$row["HN"].'</td>
-    <td>'.$row["id"].'</td>
-    <td>'.$row["namethai"].'</td>
-    <td>'.$row["age"].'</td>
-    <td>'.$row["sex"].'</td>
-    <td>'.'ตรวจสอบข้อมูล'.'</td>
-    <td><a onclick="testdelete('.$row["id"].')">'.'ลบข้อมูล'.'</a></td>
+    <td><div align="center">'.$row["HN"].'</div></td>
+    <td><div align="center">'.$row["id"].'</div></td>
+    <td><div align="center">'.$row["namethai"].'</div></td>
+    <td><div align="center">'.$row["age"].'</div></td>
+    <td><div align="center">'.$row["sex"].'</div></td>
+    <td><div align="center"><a onclick="testupdate('.$row["id"].')">'.'แก้ไข'.'</a></div></td>
+    <td><div align="center"><a onclick="testdelete('.$row["id"].')">'.'ลบข้อมูล'.'</a></div></td>
     <td>'.$a.'</td>
    </tr>
   ';
