@@ -1,11 +1,3 @@
-<?php
-// Start the session
-session_start();
-?>
-<?php 
-  if($_SESSION["super"] == "1" || $_SESSION["super"] == "0")
-  {
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,56 +20,12 @@ session_start();
 </head>
 <body>
 
-<nav class="navbar ">
-    <div class="navbar-brand">
-      <a class="navbar-item">
-        <img src="img/images.png" width="112" height="28">
-      </a>
-    </div>
 
-            <div id="navMenubd-example" class="navbar-menu">
-        <div class="navbar-start">
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link  is-active" href="#">
-                Menu
-              </a>
-              <div class="navbar-dropdown ">
-                <a class="navbar-item " href="index2.php">
-                    หน้าหลัก
-                </a>
-                <a class="navbar-item " href="checkpeople.php">
-                  เช็คผลตรวจ
-                </a>
-                <a class="navbar-item " href="checkday.php">
-                  เช็คดูยอดของการลงทะเบียน
-                </a>
-                <?php if($_SESSION["super"] == "1"){ ?><a class="navbar-item " href="newuser.php">
-                  เพิ่ม User ในระบบ
-                </a><?php } ?>
-              </div>
-            </div>
-          </div>
-    
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a class="button is-primary" href="index.html">
-                    <span class="icon">
-                      <i class="fas fa-sign-out-alt"></i>
-                    </span>
-                    <span>ออกจากระบบ</span>
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
 
   <?php 
         error_reporting(0);
-        $id = $_GET['id'];
+        $id = $_POST['id'];
+        $nameprint = $_POST['nameprint'];
         $con=mysqli_connect("localhost","root","","doctor");
         mysqli_query($con,"SET NAMES UTF8");
         $strSQL = "select * from people where id = $id";
@@ -131,7 +79,7 @@ session_start();
             $comeback2 = "ส่งกลับทาง Email, LINE, ไปรณีย์ และ รอรับผล ";
         }
     ?>
-
+        <br><br>
     <div class="container">
       <div class="notification has-text-centered">
         รายละเอียดข้อมูล
@@ -225,10 +173,10 @@ session_start();
                 <td class="has-text-centered">MCV</td>
                 <td class="has-text-centered"><?php echo $objResult['MCV']?></td>
             </tr>
-            <?php if($objResult['RBC'] == "true"){ ?><tr>
+            <tr>
                 <td class="has-text-centered">RBC</td>
-                <td class="has-text-centered"> normocytic </td>
-            </tr><?php } ?>
+                <td class="has-text-centered"><?php echo $objResult['RBC']?></td>
+            </tr>
             <tr>
                 <td class="has-text-centered">Anisocytasis</td>
                 <td class="has-text-centered"><?php echo $objResult['Anisocytasis']?></td>
@@ -266,13 +214,12 @@ session_start();
                 <td class="has-text-centered"><?php echo $objResult['result']?></td>
             </tr>
             <tr>
-                <td class="has-text-centered">ผู้ตรวจสอบ</td>
-                <td class="has-text-centered"><?php echo $objResult['usercheck']?></td>
+                <td class="has-text-centered">ลงชื่อโดย</td>
+                <td class="has-text-centered"><?php echo $nameprint;?></td>
             </tr>
         </table>
         <div id="non-printable" align="center">  
-            <span><button class="button is-primary is-outlined" onclick="myFunction2()">Print All</button></span>
-            <span><button class="button is-primary is-outlined" onclick="myFunction()">Print User</button></span>
+            
         </div>
     <?php mysqli_close($con); ?>
         </div>
@@ -281,23 +228,9 @@ session_start();
     </div>
 
 <script>
-function myFunction() {
-    window.open('checkprint.php?id=<?php echo $id ?>' , 'mypopup' , 'menubar=yes,toolbar=no,location=no,scrollbars=no, status=no,resizable=no,width=1300,height=700,top=20,left=150 ' )
-        //mypopup.focus();
-}
-
-function myFunction2() {
-    window.open('checkprint2.php?id=<?php echo $id ?>' , 'mypopup2' , 'menubar=yes,toolbar=no,location=no,scrollbars=no, status=no,resizable=no,width=1300,height=700,top=20,left=150 ' )
-        //mypopup2.focus();
-}
+    window.print();
 </script>
     
 </div>
 </body>
 </html>
-<?php 
-  }
-  else{
-    header( "location: index.html" );
-  };
-?>

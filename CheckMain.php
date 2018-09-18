@@ -39,10 +39,10 @@ session_start();
                 <a class="navbar-item " href="index2.php">
                     หน้าหลัก
                 </a>
-                <a class="navbar-item " href="checkpeople.html">
+                <a class="navbar-item " href="CheckMain.php">
                   เช็คผลตรวจ
                 </a>
-                <a class="navbar-item " href="checkday.php">
+                <a class="navbar-item " href="Check_InDayTime.php">
                   เช็คดูยอดของการลงทะเบียน
                 </a>
                 <?php if($_SESSION["super"] == "1"){ ?> <a class="navbar-item " onclick="testadduser()">
@@ -178,7 +178,7 @@ session_start();
 
     function testupdate(id){
         //swal(id.toString());
-        window.open("edit.php?id="+ id+ "", "_blank","width=1700,height=750");
+        window.open("EditProfile.php?id="+ id+ "", "_blank","width=1700,height=750");
     }
 
 

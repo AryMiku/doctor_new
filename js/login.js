@@ -6,7 +6,7 @@ function login(){
     '&password='+password;
     $.ajax({
         type:'POST',
-        url:'checklogin.php',
+        url:'API_checklogin.php',
         data: datastring,
         
         success:function(data){

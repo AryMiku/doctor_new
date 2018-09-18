@@ -35,7 +35,7 @@ function update(){
         '&inputmail='+ inputmail + '&inputline='+ inputline + '&inputadd='+ inputadd + '&checkcheck='+ checkcheck + '&usercheck='+ usercheck;
         $.ajax({
             type:'POST',
-            url:'updateuser.php',
+            url:'API_Updateuser.php',
             data: datastring,
             success:function(){
                 let timerInterval
@@ -58,7 +58,7 @@ function update(){
                     // Read more about handling dismissals
                     result.dismiss === swal.DismissReason.timer
                 ) {
-                    window.location.href = "check.php?id="+ID+"&name="+namethai+"";
+                    window.location.href = "CheckYourProfile.php?id="+ID+"&name="+namethai+"";
                 }
                 })
             }

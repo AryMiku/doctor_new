@@ -45,10 +45,10 @@ session_start();
                 <a class="navbar-item " href="index2.php">
                     หน้าหลัก
                 </a>
-                <a class="navbar-item " href="checkpeople.html">
+                <a class="navbar-item " href="CheckMain.php">
                   เช็คผลตรวจ
                 </a>
-                <a class="navbar-item " href="checkday.php">
+                <a class="navbar-item " href="Check_InDayTime.php">
                   เช็คดูยอดของการลงทะเบียน
                 </a>
                 <?php if($_SESSION["super"] == "1"){ ?> <a class="navbar-item " onclick="testadduser()">
@@ -78,10 +78,10 @@ session_start();
         <div style="margin: 6%">
             <div class="columns">
                 <div class="column">
-                        <a href="checkpeople.php" class="button is-primary is-outlined" style="width: 500px;height: 500px; font-size: 50px;">เช็คข้อมูลผู้ป่วย</a>
+                        <a href="CheckMain.php" class="button is-primary is-outlined" style="width: 500px;height: 500px; font-size: 50px;">เช็คข้อมูลผู้ป่วย</a>
                 </div>
                 <div class="column">
-                        <a href="checkday.php" class="button is-info is-outlined" style="width: 500px;height: 500px; font-size: 50px;">เช็คยอดลงทะเบียน</a>
+                        <a href="Check_InDayTime.php" class="button is-info is-outlined" style="width: 500px;height: 500px; font-size: 50px;">เช็คยอดลงทะเบียน</a>
                 </div>
             </div>
       </div>

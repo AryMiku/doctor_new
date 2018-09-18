@@ -247,7 +247,7 @@ session_start();
                     <span class="icon">
                       <i class="fas fa-sign-out-alt"></i>
                     </span>
-                    <span>ออกจากระบบ</span>
+                    <span>ปิดหน้าต่าง</span>
                   </a>
                 </p>
               </div>

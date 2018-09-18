@@ -60,7 +60,7 @@ session_start();
         </div>
       </nav>
       
-  <form action="checkresult.php" method="post">
+  <form action="CheckAll.php" method="post">
     <div class="container">
       <div class="notification">
         <center>กรุณากรอกข้อมูลของ&nbsp; <?php echo $name; ?></center>

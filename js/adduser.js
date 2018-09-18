@@ -28,7 +28,7 @@ function testadduser (){
                 '&password='+result.value[1];
                 $.ajax({
                     type:'POST',
-                    url:'adduser.php',
+                    url:'API_adduser.php',
                     data: datastring,
                     success:function(){
                         swal(

@@ -22,13 +22,13 @@ session_start();
 </style>
 <body>
 <nav class="navbar ">
-    <div class="navbar-brand">
-      <a class="navbar-item">
-        <img src="images.png" width="112" height="28">
-      </a>
-    </div>
-
-            <div id="navMenubd-example" class="navbar-menu">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="img/images.png" width="112" height="28">
+          </a>
+        </div>
+    
+        <div id="navMenubd-example" class="navbar-menu">
         <div class="navbar-start">
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link  is-active" href="#">
@@ -38,15 +38,15 @@ session_start();
                 <a class="navbar-item " href="index2.php">
                     หน้าหลัก
                 </a>
-                <a class="navbar-item " href="checkpeople.html">
+                <a class="navbar-item " href="CheckMain.php">
                   เช็คผลตรวจ
                 </a>
-                <a class="navbar-item " href="checkday.php">
+                <a class="navbar-item " href="Check_InDayTime.php">
                   เช็คดูยอดของการลงทะเบียน
                 </a>
-                <?php if($_SESSION["super"] == "1"){ ?><a class="navbar-item " href="newuser.php">
+                <?php if($_SESSION["super"] == "1"){ ?> <a class="navbar-item " onclick="testadduser()">
                   เพิ่ม User ในระบบ
-                </a><?php } ?>
+                </a> <?php } ?> 
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@ session_start();
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
-                  <a class="button is-primary" href="index.html">
+                  <a class="button is-primary" href="index.php">
                     <span class="icon">
                       <i class="fas fa-sign-out-alt"></i>
                     </span>
@@ -97,7 +97,7 @@ session_start();
         $objQuery = mysqli_query($con,$strSQL);
     ?>
 
-    <form action="checkday.php" method="post">
+    <form action="Check_InDayTime.php" method="post">
     <div class="container">
       <div class="notification has-text-centered">
         ค้นหาข้อมูล (สีเขียวคือตรวจสอบแล้ว || สีแดงคือยังไม่ตรวจสอบ)
@@ -135,7 +135,7 @@ session_start();
             
             <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
   <tr>
-    <th width="98"> <div align="center"><a href="checkday.php?sort=1&date=<?php echo $date; ?>">HN</a></div></th>
+    <th width="98"> <div align="center"><a href="Check_InDayTime.php?sort=1&date=<?php echo $date; ?>">HN</a></div></th>
     <th width="91"> <div align="center">เลขบัตรประชาชน </div></th>
     <th width="198"> <div align="center">ชื่อ - นามสกุล </div></th>
     <th width="59"> <div align="center">อายุ </div></th>
@@ -180,7 +180,7 @@ session_start();
         <div class="column" style="background-color:#ff1928">
         <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
           <tr>
-            <th width="98"> <div align="center"><a href="checkday.php?sort=1&date=<?php echo $date; ?>">HN</a></div></th>
+            <th width="98"> <div align="center"><a href="Check_InDayTime.php?sort=1&date=<?php echo $date; ?>">HN</a></div></th>
             <th width="91"> <div align="center">เลขบัตรประชาชน </div></th>
             <th width="198"> <div align="center">ชื่อ - นามสกุล </div></th>
             <th width="97"> <div align="center">อายุ </div></th>

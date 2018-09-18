@@ -62,7 +62,7 @@ function insert(){
         '&inputmail='+ inputmail + '&inputline='+ inputline + '&inputadd='+ inputadd;
         $.ajax({
             type:'POST',
-            url:'insert.php',
+            url:'API_Insert.php',
             data: datastring,
             success:function(){
                 swal(
